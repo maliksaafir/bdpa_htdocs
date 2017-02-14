@@ -4,8 +4,8 @@
     <title>Make Your Pizza</title>
   </head>
   <body>
-    <div class="form-container">
-      <h1>Your Pizza</h1>
+    <div class="container">
+      <h1>Choose Your Toppings</h1>
       <form action="review.php" method="POST">
         <div class="group">
           <label for="cheese">Cheese</label>
