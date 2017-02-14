@@ -24,7 +24,7 @@
           <input name="meat[]" type="checkbox" value="Sausage"><span>Sausage</span>
           <input name="meat[]" type="checkbox" value="Ham"><span>Ham</span>
           <input name="meat[]" type="checkbox" value="Bacon"><span>Bacon</span>
-          <input name="meat[]" type="checkbox" value="Anchovies"><span>Anchovies </span>
+          <input name="meat[]" type="checkbox" value="Anchovies"><span>Anchovies</span>
           <input name="meat[]" type="checkbox" value="Chicken"><span>Chicken</span>
         </div>
         <div class="group">
