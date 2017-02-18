@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php include('connect.php'); ?><!DOCTYPE html>
 <html>
   <head>
     <title>Make Your Pizza</title>
