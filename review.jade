@@ -1,0 +1,14 @@
+//output: review.php
+<?php include('connect.php'); ?>
+doctype
+html
+  head
+    title Review Your Pizza
+  body
+    .container
+      h1 Your Order:
+      ul
+        li <?php echo $_POST['cheese'] ?>
+        li <?php echo $_POST['sauce'] ?>
+        <?php foreach ($_POST['meat'] as $topping) {echo "<li>$topping</li>";} ?>
+        <?php foreach ($_POST['fruit'] as $topping) {echo "<li>$topping</li>";} ?>
