@@ -8,31 +8,20 @@
       <h1>Choose Your Toppings</h1>
       <form action="review.php" method="POST">
         <div class="group">
-          <label for="cheese">Cheese</label>
-          <input name="cheese" type="radio" value="Regular Cheese"><span>Regular Cheese</span>
-          <input name="cheese" type="radio" value="Extra Cheese"><span>Extra Cheese</span>
+          <label for="cheese">Cheese</label><?php while($row = mysqli_fetch_assoc($results['cheeses'])) { ?>
+          <input name="cheese" type="radio" value="&lt;?php echo $row['name']; ?&gt;"><span><?php echo $row['name'] ?>: $<?php echo $row['price']; ?></span><?php } ?>
         </div>
         <div class="group">
-          <label>Sauce</label>
-          <input name="sauce" type="radio" value="Tomato Sauce"><span>Tomato Sauce</span>
-          <input name="sauce" type="radio" value="Pesto Sauce"><span>Pesto Sauce</span>
-          <input name="sauce" type="radio" value="Cheese Sauce"><span>Cheese Sauce</span>
+          <label>Sauce</label><?php while($row = mysqli_fetch_assoc($results['sauces'])) { ?>
+          <input name="sauce" type="radio" value="&lt;?php echo $row['name']; ?&gt;"><span><?php echo $row['name'] ?>: Free</span><?php } ?>
         </div>
         <div class="group">
-          <label>Meat</label>
-          <input name="meat[]" type="checkbox" value="Pepperoni"><span>Pepperoni</span>
-          <input name="meat[]" type="checkbox" value="Sausage"><span>Sausage</span>
-          <input name="meat[]" type="checkbox" value="Ham"><span>Ham</span>
-          <input name="meat[]" type="checkbox" value="Bacon"><span>Bacon</span>
-          <input name="meat[]" type="checkbox" value="Anchovies"><span>Anchovies</span>
-          <input name="meat[]" type="checkbox" value="Chicken"><span>Chicken</span>
+          <label>Meat</label><?php while($row = mysqli_fetch_assoc($results['meats'])) { ?>
+          <input name="meat[]" type="checkbox" value="&lt;?php echo $row['name']; ?&gt;"><span><?php echo $row['name']; ?>: $<?php echo $row['price']; ?></span><?php } ?>
         </div>
         <div class="group">
-          <label>Fruits and Veggies</label>
-          <input name="fruit[]" type="checkbox" value="Bell Peppers"><span>Bell Peppers</span>
-          <input name="fruit[]" type="checkbox" value="Onions"><span>Onions</span>
-          <input name="fruit[]" type="checkbox" value="Olives"><span>Olives</span>
-          <input name="fruit[]" type="checkbox" value="Pineapple"><span>Pineapple</span>
+          <label>Fruits and Veggies</label><?php while($row = mysqli_fetch_assoc($results['fruits'])) { ?>
+          <input name="fruit[]" type="checkbox" value="&lt;?php echo $row['name']; ?&gt;"><span><?php echo $row['name']; ?>: $<?php echo $row['price'] ?></span><?php } ?>
         </div>
         <button type="submit">Submit</button>
       </form>
