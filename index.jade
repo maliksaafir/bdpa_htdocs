@@ -1,3 +1,4 @@
+
 <?php include('connect.php'); ?>
 doctype
 html
@@ -11,14 +12,14 @@ html
           label(for="cheese") Cheese
           <?php while($row = mysqli_fetch_assoc($results['cheeses'])) { ?>
           input(name="cheese" type="radio" value="<?php echo $row['name']; ?>")
-          span <?php echo $row['name'] ?>: $<?php echo $row['price']; ?>
+          span <?php echo $row['name']; ?>: $<?php echo $row['price']; ?>
           <?php } ?>
         
         .group
           label Sauce
           <?php while($row = mysqli_fetch_assoc($results['sauces'])) { ?>
           input(name="sauce" type="radio" value="<?php echo $row['name']; ?>")
-          span <?php echo $row['name'] ?>: Free
+          span <?php echo $row['name']; ?>: Free
           <?php } ?>
         
         .group
@@ -32,7 +33,7 @@ html
           label Fruits and Veggies
           <?php while($row = mysqli_fetch_assoc($results['fruits'])) { ?>
           input(name="fruit[]" type="checkbox" value="<?php echo $row['name']; ?>")
-          span <?php echo $row['name']; ?>: $<?php echo $row['price'] ?>
+          span <?php echo $row['name']; ?>: $<?php echo $row['price']; ?>
           <?php } ?>
           
         button(type="submit") Submit
