@@ -1,0 +1,39 @@
+
+<?php include('connect.php'); ?>
+doctype
+html
+  head
+    title Make Your Pizza
+  body
+    .container
+      h1 Choose Your Toppings
+      form(action="review.php" method="POST")
+        .group
+          label(for="cheese") Cheese
+          <?php while($row = mysqli_fetch_assoc($results['cheeses'])) { ?>
+          input(name="cheese" type="radio" value="<?php echo $row['name']; ?>")
+          span <?php echo $row['name']; ?>: $<?php echo $row['price']; ?>
+          <?php } ?>
+        
+        .group
+          label Sauce
+          <?php while($row = mysqli_fetch_assoc($results['sauces'])) { ?>
+          input(name="sauce" type="radio" value="<?php echo $row['name']; ?>")
+          span <?php echo $row['name']; ?>: Free
+          <?php } ?>
+        
+        .group
+          label Meat
+          <?php while($row = mysqli_fetch_assoc($results['meats'])) { ?>
+          input(name="meat[]" type="checkbox" value="<?php echo $row['name']; ?>")
+          span <?php echo $row['name']; ?>: $<?php echo $row['price']; ?>
+          <?php } ?>
+          
+        .group
+          label Fruits and Veggies
+          <?php while($row = mysqli_fetch_assoc($results['fruits'])) { ?>
+          input(name="fruit[]" type="checkbox" value="<?php echo $row['name']; ?>")
+          span <?php echo $row['name']; ?>: $<?php echo $row['price']; ?>
+          <?php } ?>
+          
+        button(type="submit") Submit
